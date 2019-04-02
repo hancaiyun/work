@@ -21,7 +21,8 @@
 		<module>work-repository</module>
 		<module>work-web</module>
 		<module>work-configuration</module>
-	</modules>
+        <module>work-common</module>
+    </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
