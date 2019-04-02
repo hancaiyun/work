@@ -16,6 +16,6 @@ public class MyTest extends BaseSpringTest {
 
     @Test
     public void cTest(){
-        log.info("这是一个测试打印");
+        log.info("这是一个测试类");
     }
 }

@@ -20,6 +20,7 @@
 		<module>work-dal</module>
 		<module>work-repository</module>
 		<module>work-web</module>
+		<module>work-configuration</module>
 	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -59,10 +60,11 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		<!-- spring安全配置，自动实现登陆配置 -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-security</artifactId>-->
+		<!--</dependency>-->
 
 		<!-- MySQL -->
 		<dependency>
