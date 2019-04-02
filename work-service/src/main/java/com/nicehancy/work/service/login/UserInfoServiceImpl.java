@@ -1,7 +1,9 @@
 package com.nicehancy.work.service.login;
 
 import com.nicehancy.work.biz.user.UserInfoBiz;
+import com.nicehancy.work.manager.model.UserInfoBO;
 import com.nicehancy.work.service.api.model.login.UserInfoDTO;
+import com.nicehancy.work.service.convert.UserInfoDTOConvert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,11 +34,12 @@ public class UserInfoServiceImpl {
 
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         try{
-
+            log.info("call UserInfoServiceImpl queryUserInfo param: loginNo={}", loginNo);
+            UserInfoBO userInfoBO = userInfoBiz.queryUserInfo(loginNo);
+            userInfoDTO = UserInfoDTOConvert.getDTOByBO(userInfoBO);
         }catch (Exception e){
-            log.error("用户信息查询失败，失败信息：{}", e);
+            log.error("call UserInfoServiceImpl queryUserInfo failed, message：e={}", e);
         }
-
         return userInfoDTO;
     }
 }
