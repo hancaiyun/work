@@ -18,6 +18,12 @@
             <!--<artifactId>testng</artifactId>-->
             <!--<version>${testng.version}</version>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>com.nicehancy</groupId>
+            <artifactId>work-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

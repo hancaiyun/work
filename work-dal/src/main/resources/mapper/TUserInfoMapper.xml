@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nicehancy.work.dal.mapper.UserInfoMapper">
+
+    <resultMap id="userInfoMap" type="com.nicehancy.work.dal.model.UserInfoDO">
+        <id column="ID"         property="id"           jdbcType="DECIMAL"/>
+        <id column="LOGIN_NO"   property="loginNo"      jdbcType="VARCHAR"/>
+        <id column="NICK_NAME"  property="nickName"     jdbcType="VARCHAR"/>
+        <id column="PASSWORD"   property="password"     jdbcType="VARCHAR"/>
+        <id column="E_MAIL"     property="eMail"        jdbcType="VARCHAR"/>
+        <id column="DEMO"       property="demo"         jdbcType="VARCHAR"/>
+        <id column="CREATED_AT" property="createdAt"    jdbcType="TIMESTAMP"/>
+        <id column="CREATED_BY" property="createdBy"    jdbcType="VARCHAR"/>
+        <id column="UPDATED_AT" property="updatedAt"    jdbcType="TIMESTAMP"/>
+        <id column="UPDATED_BY" property="updatedBy"    jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+         ID,
+         LOGIN_NO,
+         NICK_NAME,
+         PASSWORD,
+         E_MAIL,
+         DEMO,
+         CREATED_AT,
+         CREATED_BY,
+         UPDATED_AT,
+         UPDATED_BY
+    </sql>
+
+    <!-- 用户信息查询 -->
+    <select id="queryUserInfo" parameterType="java.lang.String" resultMap="userInfoMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+            T_USER_INFO
+        WHERE
+            LOGIN_NO = #{loginNo, jdbcType = VARCHAR}
+    </select>
+</mapper>

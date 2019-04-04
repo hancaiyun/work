@@ -1,7 +1,9 @@
 package com.nicehancy.work.biz.user;
 
+import com.nicehancy.work.manager.UserInfoManager;
 import com.nicehancy.work.manager.model.UserInfoBO;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
@@ -11,8 +13,11 @@ import org.springframework.stereotype.Component;
  * @author hancaiyun
  * @since 2019/4/2 17:36
  **/
-@Component
+@Service
 public class UserInfoBiz {
+
+    @Autowired
+    private UserInfoManager userInfoManager;
 
     /**
      *  用户信息查询
@@ -21,7 +26,6 @@ public class UserInfoBiz {
      */
     public UserInfoBO queryUserInfo(String loginNo) {
 
-
-        return null;
+        return userInfoManager.queryUserInfo(loginNo);
     }
 }
