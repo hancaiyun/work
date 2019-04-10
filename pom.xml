@@ -22,7 +22,8 @@
 		<module>work-web</module>
 		<module>work-configuration</module>
         <module>work-common</module>
-    </modules>
+		<module>work-task</module>
+	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -64,10 +65,10 @@
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 		<!-- spring安全配置，自动实现登陆配置 -->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-security</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 
 		<!-- MySQL -->
 		<dependency>
