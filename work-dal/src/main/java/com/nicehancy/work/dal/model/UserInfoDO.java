@@ -16,9 +16,14 @@ import lombok.Setter;
 public class UserInfoDO extends BaseDO{
 
     /**
-     * 登陆号
+     * 用户编号/登陆号
      */
-    private String loginNo;
+    private String userNo;
+
+    /**
+     * 用户名
+     */
+    private String userName;
 
     /**
      * 昵称
@@ -39,5 +44,5 @@ public class UserInfoDO extends BaseDO{
     /**
      * 备注
      */
-    private String demo;
+    private String remark;
 }

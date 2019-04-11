@@ -4,11 +4,12 @@
 
     <resultMap id="userInfoMap" type="com.nicehancy.work.dal.model.UserInfoDO">
         <id column="ID"         property="id"           jdbcType="DECIMAL"/>
-        <id column="LOGIN_NO"   property="loginNo"      jdbcType="VARCHAR"/>
+        <id column="USER_NO"    property="userNo"       jdbcType="VARCHAR"/>
+        <id column="USER_NAME"  property="userName"     jdbcType="VARCHAR"/>
         <id column="NICK_NAME"  property="nickName"     jdbcType="VARCHAR"/>
         <id column="PASSWORD"   property="password"     jdbcType="VARCHAR"/>
         <id column="E_MAIL"     property="eMail"        jdbcType="VARCHAR"/>
-        <id column="DEMO"       property="demo"         jdbcType="VARCHAR"/>
+        <id column="REMARK"     property="remark"       jdbcType="VARCHAR"/>
         <id column="CREATED_AT" property="createdAt"    jdbcType="TIMESTAMP"/>
         <id column="CREATED_BY" property="createdBy"    jdbcType="VARCHAR"/>
         <id column="UPDATED_AT" property="updatedAt"    jdbcType="TIMESTAMP"/>
@@ -17,11 +18,12 @@
 
     <sql id="Base_Column_List">
          ID,
-         LOGIN_NO,
+         USER_NO,
+         USER_NAME,
          NICK_NAME,
          PASSWORD,
          E_MAIL,
-         DEMO,
+         REMARK,
          CREATED_AT,
          CREATED_BY,
          UPDATED_AT,
@@ -35,6 +37,6 @@
         FROM
             T_USER_INFO
         WHERE
-            LOGIN_NO = #{loginNo, jdbcType = VARCHAR}
+            USER_NO = #{userNo, jdbcType = VARCHAR}
     </select>
 </mapper>

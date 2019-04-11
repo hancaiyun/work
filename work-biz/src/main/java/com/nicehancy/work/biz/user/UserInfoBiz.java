@@ -21,11 +21,11 @@ public class UserInfoBiz {
 
     /**
      *  用户信息查询
-     * @param loginNo               登录号
+     * @param userNo                登录号
      * @return                      用户信息
      */
-    public UserInfoBO queryUserInfo(String loginNo) {
+    public UserInfoBO queryUserInfo(String userNo) {
 
-        return userInfoManager.queryUserInfo(loginNo);
+        return userInfoManager.queryUserInfo(userNo);
     }
 }

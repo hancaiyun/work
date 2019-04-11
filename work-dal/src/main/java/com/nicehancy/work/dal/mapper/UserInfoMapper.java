@@ -15,8 +15,8 @@ public interface UserInfoMapper {
 
     /**
      * 用户信息查询
-     * @param loginNo               用户登录号
+     * @param userNo                用户登录号
      * @return                      用户信息
      */
-    UserInfoDO queryUserInfo(@Param("loginNo") String loginNo);
+    UserInfoDO queryUserInfo(@Param("userNo") String userNo);
 }

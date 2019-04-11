@@ -14,8 +14,8 @@ public interface UserInfoManager {
 
     /**
      * 查询用户信息
-     * @param loginNo       登录号
+     * @param userNo        登录号
      * @return              用户信息
      */
-    UserInfoBO queryUserInfo(String loginNo);
+    UserInfoBO queryUserInfo(String userNo);
 }

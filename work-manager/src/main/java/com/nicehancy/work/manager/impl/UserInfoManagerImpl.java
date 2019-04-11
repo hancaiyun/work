@@ -27,12 +27,12 @@ public class UserInfoManagerImpl implements UserInfoManager {
 
     /**
      * 用户信息查询
-     * @param loginNo       登录号
+     * @param userNo        登录号
      * @return              用户信息
      */
     @Override
-    public UserInfoBO queryUserInfo(String loginNo) {
+    public UserInfoBO queryUserInfo(String userNo) {
 
-        return UserInfoBOConvert.getBOByDO(userInfoMapper.queryUserInfo(loginNo));
+        return UserInfoBOConvert.getBOByDO(userInfoMapper.queryUserInfo(userNo));
     }
 }

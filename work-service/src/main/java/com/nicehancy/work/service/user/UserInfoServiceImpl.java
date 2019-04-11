@@ -1,4 +1,4 @@
-package com.nicehancy.work.service.login;
+package com.nicehancy.work.service.user;
 
 import com.nicehancy.work.biz.user.UserInfoBiz;
 import com.nicehancy.work.manager.model.UserInfoBO;
@@ -27,15 +27,16 @@ public class UserInfoServiceImpl {
     private UserInfoBiz userInfoBiz;
     /**
      * 用户信息查询
-     * @param loginNo               登录号
+     * @param userNo                用户编号/登录号
+     * @param traceLogId            日志ID
      * @return
      */
-    public UserInfoDTO queryUserInfo(String loginNo){
+    public UserInfoDTO queryUserInfo(String userNo, String traceLogId){
 
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         try{
-            log.info("call UserInfoServiceImpl queryUserInfo param: loginNo={}", loginNo);
-            UserInfoBO userInfoBO = userInfoBiz.queryUserInfo(loginNo);
+            log.info("call UserInfoServiceImpl queryUserInfo param: userNo={}, traceLogId={}", userNo, traceLogId);
+            UserInfoBO userInfoBO = userInfoBiz.queryUserInfo(userNo);
             userInfoDTO = UserInfoDTOConvert.getDTOByBO(userInfoBO);
         }catch (Exception e){
             log.error("call UserInfoServiceImpl queryUserInfo failed, message：e={}", e);

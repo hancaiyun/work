@@ -16,9 +16,14 @@ import lombok.Setter;
 public class UserInfoBO extends BaseBO{
 
     /**
+     * 用户名称/登陆号
+     */
+    private String userNo;
+
+    /**
      * 登陆号
      */
-    private String loginNo;
+    private String userName;
 
     /**
      * 昵称
@@ -39,5 +44,5 @@ public class UserInfoBO extends BaseBO{
     /**
      * 备注
      */
-    private String demo;
+    private String remark;
 }

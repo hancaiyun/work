@@ -31,11 +31,12 @@ public class UserInfoDTOConvert {
         }
 
         UserInfoDTO userInfoDTO = new UserInfoDTO();
-        userInfoDTO.setLoginNo(userInfoBO.getLoginNo());
+        userInfoDTO.setUserNo(userInfoBO.getUserNo());
+        userInfoDTO.setUserName(userInfoBO.getUserName());
         userInfoDTO.setNickName(userInfoBO.getNickName());
         userInfoDTO.setPassword(userInfoBO.getPassword());
         userInfoDTO.setEMail(userInfoBO.getEMail());
-        userInfoDTO.setDemo(userInfoBO.getDemo());
+        userInfoDTO.setRemark(userInfoBO.getRemark());
         userInfoDTO.setCreatedBy(userInfoBO.getCreatedBy());
         userInfoDTO.setCreatedAt(userInfoBO.getCreatedAt());
         userInfoDTO.setUpdatedBy(userInfoBO.getUpdatedBy());

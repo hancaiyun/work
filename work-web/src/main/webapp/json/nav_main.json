@@ -1,44 +1,31 @@
 {
   "data": [
     {
-      "text": "LAYUI基础",
+      "text": "系统设置",
       "icon": "&#xe620;",
       "subset": [
         {
-          "text": "按钮",
+          "text": "系统配置",
           "icon": "&#xe621;",
-          "href": "page/btn.html"
+          "href": "page/404.html"
         },{
-          "text": "表单",
+          "text": "权限配置",
           "icon": "&#xe621;",
-          "href": "page/form.html"
+          "href": "page/404.html"
         },{
-          "text": "表格",
+          "text": "任务配置",
           "icon": "&#xe621;",
-          "href": "page/table.html"
+          "href": "page/404.html"
         },{
-          "text": "选项卡",
+          "text": "开关配置",
           "icon": "&#xe621;",
-          "href": "page/tab-card.html"
-        },{
-          "text": "进度条",
-          "icon": "&#xe621;",
-          "href": "page/progress-bar.html"
-        },{
-          "text": "折叠面板",
-          "icon": "&#xe621;",
-          "href": "page/folding-panel.html"
-        },{
-          "text": "辅助元素",
-          "icon": "&#xe621;",
-          "href": "page/auxiliar.html"
-        },{
-          "text": "更多示例",
-          "icon": "&#xe621;",
-          "target": true,
-          "href": "http://www.layui.com/page/"
+          "href": "page/404.html"
         }
       ]
+    },{
+      "text": "用户管理",
+      "icon": "&#xe770;",
+      "href": "page/data-table.html"
     },{
       "text": "扩展",
       "icon": "&#xe628;",
@@ -87,7 +74,7 @@
       "icon": "&#xe638;",
       "href": "page/children.html"
     },{
-      "text": "加入群下载源码",
+      "text": "加入交流群",
       "icon": "&#xe601;",
       "target": true,
       "href": "https://jq.qq.com/?_wv=1027&k=56g9qQH"

@@ -3,7 +3,7 @@ package com.nicehancy.work.web;
 
 import com.nicehancy.work.common.utils.TripleDESUtil;
 import com.nicehancy.work.service.api.model.login.UserInfoDTO;
-import com.nicehancy.work.service.login.UserInfoServiceImpl;
+import com.nicehancy.work.service.user.UserInfoServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +25,8 @@ public class MyTest extends BaseSpringTest {
     @Test
     public void queryUserInfoTest(){
 
-        UserInfoDTO userInfoDTO = userInfoService.queryUserInfo("19921577717");
-        log.info("result:{}", userInfoDTO);
+        //UserInfoDTO userInfoDTO = userInfoService.queryUserInfo("19921577717");
+        //log.info("result:{}", userInfoDTO);
     }
 
     @Test

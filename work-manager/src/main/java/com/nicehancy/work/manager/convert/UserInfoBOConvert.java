@@ -33,11 +33,12 @@ public class UserInfoBOConvert {
         }
 
         UserInfoBO userInfoBO = new UserInfoBO();
-        userInfoBO.setLoginNo(userInfoDO.getLoginNo());
+        userInfoBO.setUserNo(userInfoDO.getUserNo());
+        userInfoBO.setUserName(userInfoDO.getUserName());
         userInfoBO.setNickName(userInfoDO.getNickName());
         userInfoBO.setPassword(userInfoDO.getPassword());
         userInfoBO.setEMail(userInfoDO.getEMail());
-        userInfoBO.setDemo(userInfoDO.getDemo());
+        userInfoBO.setRemark(userInfoDO.getRemark());
         userInfoBO.setCreatedAt(userInfoDO.getCreatedAt());
         userInfoBO.setCreatedBy(userInfoDO.getCreatedBy());
         userInfoBO.setUpdatedAt(userInfoDO.getUpdatedAt());
