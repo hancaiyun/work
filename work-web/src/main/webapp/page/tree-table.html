@@ -22,7 +22,7 @@
         <div class="my-btn-box">
             <span class="fl">
                 <a class="layui-btn layui-btn-danger" id="btn-delete-all">批量删除</a>
-                <a class="layui-btn btn-default btn-add" id="btn-add-article">发布文章</a>
+                <!--<a class="layui-btn btn-default btn-add" id="btn-add-article">发布文章</a>-->
             </span>
             <span class="fr">
                 <span class="layui-form-label">搜索条件：</span>
@@ -58,9 +58,10 @@
             , cols: [[                  //标题栏
                 {checkbox: true, sort: true, fixed: true, space: true}
                 , {field: 'id', title: 'ID', width: 80}
-                , {field: 'account', title: '用户名', width: 120}
-                , {field: 'auth_group_name', title: '权限组', width: 120}
-                , {field: 'last_login_time', title: '最后登录时间', width: 180}
+                , {field: 'user_no', title: '用户编号', width: 120}
+                , {field: 'user_name', title: '用户名', width: 120}
+                , {field: 'auth_no', title: '权限编号', width: 120}
+                , {field: 'auth_name', title: '权限名称', width: 180}
                 , {field: 'last_login_ip', title: '最后登录IP', width: 180}
                 , {field: 'create_time', title: '创建时间', width: 180}
                 , {field: 'status', title: '状态', width: 70}
