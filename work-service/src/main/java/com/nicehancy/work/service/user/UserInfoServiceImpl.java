@@ -38,6 +38,7 @@ public class UserInfoServiceImpl {
             log.info("call UserInfoServiceImpl queryUserInfo param: userNo={}, traceLogId={}", userNo, traceLogId);
             UserInfoBO userInfoBO = userInfoBiz.queryUserInfo(userNo);
             userInfoDTO = UserInfoDTOConvert.getDTOByBO(userInfoBO);
+            log.info("call UserInfoServiceImpl queryUserInfo result: {}", userInfoDTO);
         }catch (Exception e){
             log.error("call UserInfoServiceImpl queryUserInfo failed, message：e={}", e);
         }

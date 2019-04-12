@@ -5,9 +5,6 @@ import com.nicehancy.work.web.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.UUID;
-
 /**
  * <p>
  *     用户管理controller测试类
