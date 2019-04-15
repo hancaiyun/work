@@ -1,7 +1,7 @@
 package com.nicehancy.work.web.controller;
 
 import com.nicehancy.work.controller.user.UserController;
-import com.nicehancy.work.web.BaseSpringTest;
+import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

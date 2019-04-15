@@ -40,6 +40,7 @@
 		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-codec.version>1.12</commons-codec.version>
+		<elasticjob-version>2.1.5</elasticjob-version>
 	</properties>
 
 	<dependencies>
@@ -122,6 +123,18 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!--  elastic Job -->
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>elastic-job-lite-core</artifactId>
+			<version>${elasticjob-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dangdang</groupId>
+			<artifactId>elastic-job-lite-spring</artifactId>
+			<version>${elasticjob-version}</version>
 		</dependency>
 
 		<!--&lt;!&ndash;testng&ndash;&gt;-->

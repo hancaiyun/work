@@ -1,7 +1,7 @@
 package com.nicehancy.work.web.common.util;
 
 import com.nicehancy.work.common.utils.TripleDESUtil;
-import com.nicehancy.work.web.BaseSpringTest;
+import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

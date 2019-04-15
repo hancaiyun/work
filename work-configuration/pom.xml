@@ -10,6 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>work-configuration</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.nicehancy</groupId>
+            <artifactId>work-task</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 
 </project>

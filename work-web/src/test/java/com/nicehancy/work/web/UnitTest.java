@@ -1,5 +1,6 @@
 package com.nicehancy.work.web;
 
+import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -12,7 +13,7 @@ import org.junit.Test;
  * @since 2019/4/9 12:10
  **/
 @Slf4j
-public class UnitTest extends BaseSpringTest{
+public class UnitTest extends BaseSpringTest {
 
     static int arr[] = new int[10];
 
@@ -20,6 +21,5 @@ public class UnitTest extends BaseSpringTest{
     public void test(){
         log.info("{}",arr[1]);
     }
-
 
 }

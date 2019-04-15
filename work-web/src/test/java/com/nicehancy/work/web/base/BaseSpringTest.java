@@ -1,4 +1,4 @@
-package com.nicehancy.work.web;
+package com.nicehancy.work.web.base;
 
 import com.nicehancy.work.Application;
 import org.junit.runner.RunWith;
@@ -7,6 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * <p>
+ *     测试父类
  * <p/>
  *
  * @author hancaiyun
