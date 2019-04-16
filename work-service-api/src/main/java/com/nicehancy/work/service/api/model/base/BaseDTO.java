@@ -1,18 +1,21 @@
-package com.nicehancy.work.manager.model;
+package com.nicehancy.work.service.api.model.base;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * <p>
+ *     DTO父类
  * <p/>
  *
  * @author hancaiyun
- * @since 2019/4/3 0:37
+ * @since 2019/4/2 16:29
  **/
 @Getter
 @Setter
-public class BaseBO {
+@ToString
+public class BaseDTO {
 
     /**
      * 创建时间

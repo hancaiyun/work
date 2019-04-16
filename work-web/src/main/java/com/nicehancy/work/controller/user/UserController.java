@@ -1,7 +1,7 @@
 package com.nicehancy.work.controller.user;
 
 import com.nicehancy.work.controller.base.BaseController;
-import com.nicehancy.work.service.api.model.login.UserInfoDTO;
+import com.nicehancy.work.service.api.model.UserInfoDTO;
 import com.nicehancy.work.service.user.UserInfoServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;

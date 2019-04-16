@@ -2,7 +2,7 @@ package com.nicehancy.work.service.user;
 
 import com.nicehancy.work.biz.user.UserInfoBiz;
 import com.nicehancy.work.manager.model.UserInfoBO;
-import com.nicehancy.work.service.api.model.login.UserInfoDTO;
+import com.nicehancy.work.service.api.model.UserInfoDTO;
 import com.nicehancy.work.service.convert.UserInfoDTOConvert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

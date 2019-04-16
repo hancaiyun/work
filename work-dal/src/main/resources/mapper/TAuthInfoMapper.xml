@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.nicehancy.work.dal.mapper.UserInfoMapper">
+<mapper namespace="com.nicehancy.work.dal.mapper.AuthInfoMapper">
 
-    <resultMap id="userInfoMap" type="com.nicehancy.work.dal.model.UserInfoDO">
+    <resultMap id="authInfoMap" type="com.nicehancy.work.dal.model.AuthInfoDO">
         <id column="ID"         property="id"           jdbcType="DECIMAL"/>
-        <id column="USER_NO"    property="userNo"       jdbcType="VARCHAR"/>
-        <id column="USER_NAME"  property="userName"     jdbcType="VARCHAR"/>
-        <id column="NICK_NAME"  property="nickName"     jdbcType="VARCHAR"/>
-        <id column="PASSWORD"   property="password"     jdbcType="VARCHAR"/>
-        <id column="E_MAIL"     property="eMail"        jdbcType="VARCHAR"/>
-        <id column="AUTH_CODE"  property="authCode"   jdbcType="VARCHAR"/>
+        <id column="AUTH_CODE"  property="authCode"     jdbcType="VARCHAR"/>
+        <id column="AUTH_NAME"  property="authName"     jdbcType="VARCHAR"/>
         <id column="REMARK"     property="remark"       jdbcType="VARCHAR"/>
         <id column="CREATED_AT" property="createdAt"    jdbcType="TIMESTAMP"/>
         <id column="CREATED_BY" property="createdBy"    jdbcType="VARCHAR"/>
@@ -19,12 +15,8 @@
 
     <sql id="Base_Column_List">
          ID,
-         USER_NO,
-         USER_NAME,
-         NICK_NAME,
-         PASSWORD,
-         E_MAIL,
          AUTH_CODE,
+         AUTH_NAME,
          REMARK,
          CREATED_AT,
          CREATED_BY,
@@ -33,12 +25,12 @@
     </sql>
 
     <!-- 用户信息查询 -->
-    <select id="queryUserInfo" parameterType="java.lang.String" resultMap="userInfoMap">
+    <select id="queryAuthInfo" parameterType="java.lang.String" resultMap="authInfoMap">
         SELECT
         <include refid="Base_Column_List"/>
         FROM
-            T_USER_INFO
+            T_AUTH_INFO
         WHERE
-            USER_NO = #{userNo, jdbcType = VARCHAR}
+            AUTH_CODE = #{authCode, jdbcType = VARCHAR}
     </select>
 </mapper>

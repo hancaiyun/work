@@ -1,6 +1,6 @@
-package com.nicehancy.work.service.api.model.login;
+package com.nicehancy.work.service.api.model;
 
-import com.nicehancy.work.service.api.model.BaseDTO;
+import com.nicehancy.work.service.api.model.base.BaseDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -49,6 +49,11 @@ public class UserInfoDTO extends BaseDTO implements Serializable{
      * 邮箱
      */
     private String eMail;
+
+    /**
+     * 权限编号
+     */
+    private String authCode;
 
     /**
      * 备注

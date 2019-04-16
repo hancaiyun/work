@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * <p>
@@ -19,6 +20,7 @@ import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 @EnableCaching
 //@EnableDubbo(scanBasePackages = "com.nicehancy.work.service")
 @MapperScan(basePackages = "com.nicehancy.work.dal.mapper")
+@EnableScheduling
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

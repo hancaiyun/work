@@ -1,7 +1,7 @@
 package com.nicehancy.work.service.convert;
 
 import com.nicehancy.work.manager.model.UserInfoBO;
-import com.nicehancy.work.service.api.model.login.UserInfoDTO;
+import com.nicehancy.work.service.api.model.UserInfoDTO;
 
 /**
  * <p>
@@ -36,6 +36,7 @@ public class UserInfoDTOConvert {
         userInfoDTO.setNickName(userInfoBO.getNickName());
         userInfoDTO.setPassword(userInfoBO.getPassword());
         userInfoDTO.setEMail(userInfoBO.getEMail());
+        userInfoDTO.setAuthCode(userInfoBO.getAuthCode());
         userInfoDTO.setRemark(userInfoBO.getRemark());
         userInfoDTO.setCreatedBy(userInfoBO.getCreatedBy());
         userInfoDTO.setCreatedAt(userInfoBO.getCreatedAt());

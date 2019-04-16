@@ -1,4 +1,4 @@
-package com.nicehancy.work.dal.model;
+package com.nicehancy.work.dal.model.base;
 
 import lombok.Getter;
 import lombok.Setter;

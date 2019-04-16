@@ -1,6 +1,6 @@
 package com.nicehancy.work.web.service;
 
-import com.nicehancy.work.service.api.model.login.UserInfoDTO;
+import com.nicehancy.work.service.api.model.UserInfoDTO;
 import com.nicehancy.work.service.user.UserInfoServiceImpl;
 import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;

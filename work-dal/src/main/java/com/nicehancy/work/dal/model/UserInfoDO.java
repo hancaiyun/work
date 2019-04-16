@@ -1,5 +1,6 @@
 package com.nicehancy.work.dal.model;
 
+import com.nicehancy.work.dal.model.base.BaseDO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +14,7 @@ import lombok.Setter;
  **/
 @Getter
 @Setter
-public class UserInfoDO extends BaseDO{
+public class UserInfoDO extends BaseDO {
 
     /**
      * 用户编号/登陆号
@@ -40,6 +41,11 @@ public class UserInfoDO extends BaseDO{
      * 邮箱
      */
     private String eMail;
+
+    /**
+     * 权限编号
+     */
+    private String authCode;
 
     /**
      * 备注
