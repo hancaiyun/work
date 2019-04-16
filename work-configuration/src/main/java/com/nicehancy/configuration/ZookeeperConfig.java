@@ -17,9 +17,21 @@ import org.springframework.context.annotation.Configuration;
  **/
 @Configuration
 @ConditionalOnExpression("'${regCenter.serverList}'.length() > 0")
-public class JobRegistryCenterConfig {
-    @Bean(initMethod = "init")
-    public ZookeeperRegistryCenter regCenter(@Value("${regCenter.serverList}") final String serverList, @Value("${regCenter.namespace}") final String namespace) {
-        return new ZookeeperRegistryCenter(new ZookeeperConfiguration(serverList, namespace));
+public class ZookeeperConfig {
+
+
+    @Value("${zookeeper.serverList}")
+    private String serverList;
+    @Value("${zookeeper.namespace.elasticJob}")
+    private String namespace;
+
+    @Bean
+    public ZookeeperConfiguration zkConfig() {
+        return new ZookeeperConfiguration(serverList, namespace);
+    }
+
+    @Bean(initMethod = "init", destroyMethod = "close")
+    public ZookeeperRegistryCenter regCenter(ZookeeperConfiguration config) {
+        return new ZookeeperRegistryCenter(config);
     }
 }
