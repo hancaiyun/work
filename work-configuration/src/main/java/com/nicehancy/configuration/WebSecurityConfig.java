@@ -1,7 +1,6 @@
 package com.nicehancy.configuration;
 
 import com.nicehancy.work.service.security.CustomUserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -10,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 /**
  * <p>
@@ -52,6 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 //.antMatchers("/admin/**").hasRole("ROLE_ADMIN") //将权限分配给角色
                 .logout().permitAll(); //注销行为任意访问
+        //iframe框架内嵌问题
         http.headers().frameOptions().disable();
     }
 }

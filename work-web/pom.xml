@@ -12,12 +12,6 @@
     <artifactId>work-web</artifactId>
 
     <dependencies>
-        <!--&lt;!&ndash; testng &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.testng</groupId>-->
-            <!--<artifactId>testng</artifactId>-->
-            <!--<version>${testng.version}</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.nicehancy</groupId>
             <artifactId>work-service</artifactId>

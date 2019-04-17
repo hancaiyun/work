@@ -1,6 +1,5 @@
 package com.nicehancy.work.web.service;
 
-import com.nicehancy.work.service.api.model.UserInfoDTO;
 import com.nicehancy.work.service.user.UserInfoServiceImpl;
 import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +28,6 @@ public class UserInfoTest extends BaseSpringTest {
     @Test
     public void queryUserInfoTest(){
 
-        UserInfoDTO userInfoDTO = userInfoService.queryUserInfo("19921577717", UUID.randomUUID().toString());
+        userInfoService.queryUserInfo("19921577717", UUID.randomUUID().toString());
     }
 }
