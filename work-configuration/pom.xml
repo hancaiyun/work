@@ -12,9 +12,16 @@
     <artifactId>work-configuration</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.nicehancy</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>work-task</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>work-service</artifactId>
+            <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
 
@@ -23,13 +30,5 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.nicehancy</groupId>
-            <artifactId>work-service</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
-
-
 </project>

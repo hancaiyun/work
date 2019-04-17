@@ -32,7 +32,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<slf4j.version>1.7.25</slf4j.version>
-		<!--<testng.version>6.8.21</testng.version>-->
 		<dubbo-spring-boot-starter.version>2.7.0</dubbo-spring-boot-starter.version>
 		<dubbo.version>2.7.0</dubbo.version>
 		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
@@ -148,14 +147,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-		<!--&lt;!&ndash;testng&ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>org.testng</groupId>-->
-			<!--<artifactId>testng</artifactId>-->
-			<!--<version>${testng.version}</version>-->
-		<!--</dependency>-->
-
+		
 		<!--dubbo-->
 		<dependency>
 			<groupId>org.apache.dubbo</groupId>

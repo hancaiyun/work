@@ -42,6 +42,4 @@ public class MyElasticJob implements SimpleJob {
                 break;
         }
     }
-
-
 }
