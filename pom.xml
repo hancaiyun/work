@@ -6,20 +6,18 @@
 	<groupId>com.nicehancy</groupId>
 	<artifactId>work</artifactId>
 	<packaging>pom</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>work</name>
 	<description>My project for work and learn</description>
 
     <modules>
         <module>work-web</module>
 		<module>work-service-api</module>
-		<module>work-service-api</module>
 		<module>work-biz</module>
 		<module>work-service</module>
 		<module>work-manager</module>
 		<module>work-dal</module>
 		<module>work-repository</module>
-		<module>work-web</module>
 		<module>work-configuration</module>
         <module>work-common</module>
 		<module>work-task</module>

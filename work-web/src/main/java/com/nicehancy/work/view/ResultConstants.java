@@ -41,14 +41,8 @@ public final class ResultConstants {
     /** 404的编码 */
     public static final String ERROR_404_CODE = "404";
 
-    /** 500的编码 */
-    public static final String ERROR_500_CODE = "500";
-
     /** 404错误页 */
     public static final String ERROR_404_PAGE = "/page/404.html";
-
-    /** 500错误页 */
-    public static final String ERROR_500_PAGE = "/page/500.html";
 
     /** 成功页 */
     public static final String SUCCESS_PAGE = "/page/welcome.html";

@@ -1,6 +1,7 @@
 package com.nicehancy.configuration;
 
 import com.nicehancy.work.service.security.CustomUserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -51,5 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 //.antMatchers("/admin/**").hasRole("ROLE_ADMIN") //将权限分配给角色
                 .logout().permitAll(); //注销行为任意访问
+        http.headers().frameOptions().disable();
     }
 }
