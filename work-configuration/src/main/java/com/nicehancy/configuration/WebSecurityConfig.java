@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 //.antMatchers("/admin/**").hasRole("ROLE_ADMIN") //将权限分配给角色
                 .logout().permitAll(); //注销行为任意访问
-        //iframe框架内嵌问题
+        //解决iframe框架不允许内嵌问题
         http.headers().frameOptions().disable();
     }
 }

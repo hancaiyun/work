@@ -1,5 +1,7 @@
 package com.nicehancy.work.web;
 
+import com.nicehancy.work.common.utils.FileUtil;
+import com.nicehancy.work.common.utils.RegularValidatorUtil;
 import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -33,5 +35,20 @@ public class UnitTest extends BaseSpringTest {
         String encode = bCryptPasswordEncoder.encode("123456");
         log.info("密文：{}", encode);
         log.info("数据库存储格式为:{}","{bcrypt}" + encode);
+    }
+
+    /**
+     * 邮箱验证测试
+     */
+    @Test
+    public void isEmailTest(){
+        String str = "nicehancy@yeah.net";
+        log.info("验证结果：{}", RegularValidatorUtil.isEmail(str));
+    }
+
+    @Test
+    public void fileTest(){
+
+        FileUtil.createFile();
     }
 }

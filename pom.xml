@@ -38,6 +38,7 @@
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-codec.version>1.12</commons-codec.version>
 		<elasticjob-version>2.1.5</elasticjob-version>
+		<poi.version>3.15</poi.version>
 	</properties>
 
 	<dependencies>
@@ -121,6 +122,25 @@
 			<version>${slf4j.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+		<!-- iText -->
 
 		<!--  elastic Job -->
 		<dependency>

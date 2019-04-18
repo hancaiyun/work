@@ -25,7 +25,7 @@
     },{
       "text": "用户管理",
       "icon": "&#xe770;",
-      "href": "page/data-table.html"
+      "href": "page/user-list.html"
     },{
       "text": "扩展",
       "icon": "&#xe628;",
