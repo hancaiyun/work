@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 /**
  * <p>
  *     countDownLatch测试
+ *     同步处理多件事，等待全部处理完成，提交结果
  * <p/>
  *
  * @author hancaiyun

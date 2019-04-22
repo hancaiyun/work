@@ -1,5 +1,6 @@
 package com.nicehancy.work.common.utils;
 
+import com.itextpdf.text.Font;
 import com.nicehancy.work.common.constant.CommonConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.*;
@@ -12,6 +13,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.*;
 
 /**
  * <p>
@@ -189,6 +193,144 @@ public class FileUtil {
             }
         } else {
             log.error("删除本地文件失败：" + fileName + "不存在！");
+        }
+    }
+
+    /**
+     * iText生成PDF文件
+     * @param path      生成文件路径
+     */
+    public static void createPDF(String path){
+
+        // 1.1新建document对象
+        Document document = new Document();
+        //生成一个唯一的临时文件名
+        String fileName = UUID.randomUUID().toString();
+        // 1.2.建立一个书写器(Writer)与document对象关联
+        try {
+            // 创建 PdfWriter 对象
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(path + fileName
+                    + ".pdf"));
+
+            // 1.3.打开文档
+            document.open();
+
+            //中文字体,解决中文不能显示问题
+            BaseFont chinese = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.
+                    NOT_EMBEDDED);
+
+            //中文字体,7号，正常
+            Font font = new Font(chinese, 7, Font.NORMAL);
+
+            //创建10列的表
+            PdfPTable table = new PdfPTable(10);
+            List<PdfPRow> listRow = table.getRows();
+
+            //头
+            PdfPCell[] cells = new PdfPCell[10];
+            PdfPRow rowHead = new PdfPRow(cells);
+            //单元格
+            cells[0] = new PdfPCell(new Paragraph("批次号", font));
+            cells[0].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[0].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[0].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[1] = new PdfPCell(new Paragraph("批次类型", font));
+            cells[1].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[1].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[1].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[2] = new PdfPCell(new Paragraph("省份", font));
+            cells[2].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[2].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[2].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[3] = new PdfPCell(new Paragraph("地市", font));
+            cells[3].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[3].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[3].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[4] = new PdfPCell(new Paragraph("工单总数", font));
+            cells[4].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[4].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[4].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[5] = new PdfPCell(new Paragraph("已认领数", font));
+            cells[5].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[5].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[5].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[6] = new PdfPCell(new Paragraph("工单提交数", font));
+            cells[6].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[6].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[6].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[7] = new PdfPCell(new Paragraph("审核通过数", font));
+            cells[7].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[7].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[7].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[8] = new PdfPCell(new Paragraph("审核失败数", font));
+            cells[8].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[8].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[8].setBackgroundColor(BaseColor.ORANGE);
+
+            cells[9] = new PdfPCell(new Paragraph("成本消耗值", font));
+            cells[9].setBorderColor(BaseColor.LIGHT_GRAY);
+            cells[9].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cells[9].setBackgroundColor(BaseColor.ORANGE);
+            //把第一行添加到集合
+            listRow.add(rowHead);
+            //写入数据
+            //for (InspectionProgressResBO inspectionProgressResBO : list) {
+            PdfPCell[] cellsData = new PdfPCell[10];
+            PdfPRow row = new PdfPRow(cellsData);
+            cellsData[0] = new PdfPCell(new Paragraph("", font));
+            cellsData[0].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[0].setHorizontalAlignment(Element.ALIGN_CENTER);
+            //返回固定值 -巡检
+            cellsData[1] = new PdfPCell(new Paragraph("巡检", font));
+            cellsData[1].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[1].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[2] = new PdfPCell(new Paragraph("", font));
+            cellsData[2].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[2].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[3] = new PdfPCell(new Paragraph("", font));
+            cellsData[3].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[3].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[4] = new PdfPCell(new Paragraph("", font));
+            cellsData[4].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[4].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[5] = new PdfPCell(new Paragraph("", font));
+            cellsData[5].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[5].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[6] = new PdfPCell(new Paragraph("", font));
+            cellsData[6].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[6].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[7] = new PdfPCell(new Paragraph("", font));
+            cellsData[7].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[7].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[8] = new PdfPCell(new Paragraph("", font));
+            cellsData[8].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[8].setHorizontalAlignment(Element.ALIGN_CENTER);
+            cellsData[9] = new PdfPCell(new Paragraph("", font));
+            cellsData[9].setBorderColor(BaseColor.LIGHT_GRAY);
+            cellsData[9].setHorizontalAlignment(Element.ALIGN_CENTER);
+
+            listRow.add(row);
+            //}
+
+            //把表格添加到文件中
+            document.add(table);
+
+            // 1.5.关闭文档
+            document.close();
+            // 1.6.关闭流
+            writer.close();
+        }catch (IOException e){
+            log.error("文件流读取失败");
+        }catch (DocumentException e){
+            log.error("文件操作异常");
         }
     }
 }
