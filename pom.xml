@@ -39,6 +39,7 @@
 		<commons-codec.version>1.12</commons-codec.version>
 		<elasticjob-version>2.1.5</elasticjob-version>
 		<poi.version>3.15</poi.version>
+		<fastjson.version>1.2.57</fastjson.version>
 	</properties>
 
 	<dependencies>
@@ -59,6 +60,13 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.0.0</version>
 		</dependency>
+		
+		<!--REDIS-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
@@ -123,6 +131,15 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- fastjson -->
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+
+
 		<!-- poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -167,7 +184,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!--dubbo-->
 		<dependency>
 			<groupId>org.apache.dubbo</groupId>

@@ -1,4 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+    <group>
+        <!-- web -->
+        <property name="spring.datasource.driver-class-name" />
+        <property name="spring.datasource.url" />
+        <property name="spring.datasource.username" />
+        <property name="spring.datasource.password" />
+        <property name="spring.datasource.type" />
+        <property name="spring.datasource.hikari.minimum-idle" />
+        <property name="spring.datasource.hikari.maximum-pool-size" />
+        <property name="spring.datasource.hikari.auto-commit" />
+        <property name="spring.datasource.hikari.idle-timeout" />
+        <property name="spring.datasource.hikari.pool-name" />
+        <property name="spring.datasource.hikari.max-lifetime" />
+        <property name="spring.datasource.hikari.connection-timeout" />
+        <property name="spring.datasource.hikari.connection-test-query" />
+        <property name="mybatis.mapper-locations" />
+        <property name="mybatis.type-aliases-package" />
+        <property name="dubbo.application.name"/>
+        <property name="dubbo.protocol.name"/>
+        <property name="dubbo.protocol.port"/>
+        <property name="dubbo.protocol.threads" />
+        <property name="dubbo.registry.protocol" />
+        <property name="dubbo.registry.address" />
+        <!--kafka生产者-->
+        <property name="spring.kafka.producer.bootstrap-servers"/>
+        <property name="spring.kafka.producer.acks"/>
+        <property name="spring.kafka.producer.retries"/>
+        <property name="spring.kafka.producer.topicName"/>
+        <property name="spring.kafka.producer.client-id"/>
 
+        <property name="spring.kafka.consumer.group-id" />
+        <property name="spring.kafka.consumer.bootstrap-servers" />
+        <property name="spring.kafka.consumer.enable-auto-commit" />
+        <property name="spring.kafka.max.poll.records" />
+        <property name="spring.kafka.consumer.concurrency"/>
+        <property name="spring.redis.database" />
+        <property name="spring.redis.sentinel.master" />
+        <property name="spring.redis.sentinel.nodes" />
+        <property name="spring.redis.pool.max-active" />
+        <property name="spring.redis.pool.max-wait" />
+        <property name="spring.redis.pool.max-idle" />
+        <property name="spring.redis.pool.min-idle" />
+        <property name="spring.redis.timeout" />
+        <property name="spring.http.QrCode"/>
+    </group>
+    <script>
+        <generate template="WEB-INF/classes/logback.xml" />
+        <generate template="WEB-INF/classes/application.properties" />
+    </script>
 </config>
