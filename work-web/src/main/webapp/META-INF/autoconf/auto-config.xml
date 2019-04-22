@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <group>
+    <group name ="dataSource">
         <!-- web -->
         <property name="spring.datasource.driver-class-name" />
         <property name="spring.datasource.url" />
@@ -17,12 +17,17 @@
         <property name="spring.datasource.hikari.connection-test-query" />
         <property name="mybatis.mapper-locations" />
         <property name="mybatis.type-aliases-package" />
+    </group>
+    <group name="dubblo">
+        <!--dubbo-->
         <property name="dubbo.application.name"/>
         <property name="dubbo.protocol.name"/>
         <property name="dubbo.protocol.port"/>
         <property name="dubbo.protocol.threads" />
         <property name="dubbo.registry.protocol" />
         <property name="dubbo.registry.address" />
+    </group>
+    <group name="kafka">
         <!--kafka生产者-->
         <property name="spring.kafka.producer.bootstrap-servers"/>
         <property name="spring.kafka.producer.acks"/>
@@ -30,20 +35,25 @@
         <property name="spring.kafka.producer.topicName"/>
         <property name="spring.kafka.producer.client-id"/>
 
+        <!--kafka消费者-->
         <property name="spring.kafka.consumer.group-id" />
         <property name="spring.kafka.consumer.bootstrap-servers" />
         <property name="spring.kafka.consumer.enable-auto-commit" />
         <property name="spring.kafka.max.poll.records" />
         <property name="spring.kafka.consumer.concurrency"/>
-        <property name="spring.redis.database" />
-        <property name="spring.redis.sentinel.master" />
-        <property name="spring.redis.sentinel.nodes" />
-        <property name="spring.redis.pool.max-active" />
-        <property name="spring.redis.pool.max-wait" />
-        <property name="spring.redis.pool.max-idle" />
-        <property name="spring.redis.pool.min-idle" />
-        <property name="spring.redis.timeout" />
-        <property name="spring.http.QrCode"/>
+    </group>
+    <group name="redis">
+        <!--redis-->
+<!--        <property name="spring.redis.database" />-->
+        <property name="spring.redis.host" defaultValue="127.0.0.1"/>
+        <property name="spring.redis.port" defaultValue="6379"/>
+<!--        <property name="spring.redis.sentinel.master" />-->
+<!--        <property name="spring.redis.sentinel.nodes" />-->
+<!--        <property name="spring.redis.pool.max-active" />-->
+<!--        <property name="spring.redis.pool.max-wait" />-->
+<!--        <property name="spring.redis.pool.max-idle" />-->
+<!--        <property name="spring.redis.pool.min-idle" />-->
+        <property name="spring.redis.timeout" defaultValue="10000"/>
     </group>
     <script>
         <generate template="WEB-INF/classes/logback.xml" />
