@@ -42,6 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //解决iframe框架不允许内嵌问题
+        http.headers().frameOptions().disable();
+
         http.authorizeRequests()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
@@ -52,7 +55,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
                 //.antMatchers("/admin/**").hasRole("ROLE_ADMIN") //将权限分配给角色
                 .logout().permitAll(); //注销行为任意访问
-        //解决iframe框架不允许内嵌问题
-        http.headers().frameOptions().disable();
     }
 }

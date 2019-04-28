@@ -289,7 +289,7 @@ public class FileUtil {
             cellsData[0].setBorderColor(BaseColor.LIGHT_GRAY);
             cellsData[0].setHorizontalAlignment(Element.ALIGN_CENTER);
             //返回固定值 -巡检
-            cellsData[1] = new PdfPCell(new Paragraph("巡检", font));
+            cellsData[1] = new PdfPCell(new Paragraph("", font));
             cellsData[1].setBorderColor(BaseColor.LIGHT_GRAY);
             cellsData[1].setHorizontalAlignment(Element.ALIGN_CENTER);
             cellsData[2] = new PdfPCell(new Paragraph("", font));

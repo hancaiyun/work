@@ -7,6 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.xml.soap.Node;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>
  *     单元、自定义测试
@@ -50,5 +54,24 @@ public class UnitTest extends BaseSpringTest {
     public void fileTest(){
 
         FileUtil.createFile();
+    }
+
+    @Test
+    public void hashMapTest(){
+        HashMap hashMap = new HashMap();
+        hashMap.put("1","A");
+        hashMap.put("1","B");
+        hashMap.put("1","C");
+
+        hashMap.put("2","D");
+
+
+        log.info("打印结果 ：{}", hashMap);
+    }
+
+    @Test
+    public void test1(){
+        //Class.forName().get
+
     }
 }
