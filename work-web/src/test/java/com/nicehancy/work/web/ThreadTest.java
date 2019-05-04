@@ -4,8 +4,6 @@ import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import static java.lang.Thread.sleep;
-
 /**
  * <p>
  * 多线程测试类
@@ -22,13 +20,13 @@ public class ThreadTest extends BaseSpringTest {
      */
     @Test
     public void me(){
-        log.info("我：一份薯条，一杯可乐，谢谢（12号餐桌）");
+        log.info("Thread-id:{},我：一份薯条，一杯可乐，谢谢（12号餐桌）",Thread.currentThread().getId());
         String message = order();
-        log.info("前台：{}", message);
+        log.info("Thread-id:{},前台：{}", Thread.currentThread().getId(),message);
     }
 
     public void giveMe(){
-        log.info("服务员：您的薯条、可乐，请慢用");
+        log.info("Thread-id:{},服务员：您的薯条、可乐，请慢用", Thread.currentThread().getId());
     }
 
     /**
@@ -39,14 +37,14 @@ public class ThreadTest extends BaseSpringTest {
     public String order() {
 
         Thread t = new Thread(() -> {
-        log.info("制作中");
-        log.info("制作完成");
+        log.info("Thread-id:{},制作中",Thread.currentThread().getId());
+        log.info("Thread-id:{},制作完成",Thread.currentThread().getId());
 
         //回调
         giveMe();
         });
 
         t.start();//开始，开始去执行线程
-        return "请稍等，马上就好";
+        return "Thread-id:"+Thread.currentThread().getId()+",请稍等，马上就好";
     }
 }
