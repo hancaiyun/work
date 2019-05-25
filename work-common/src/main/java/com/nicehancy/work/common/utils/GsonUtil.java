@@ -1,7 +1,10 @@
 package com.nicehancy.work.common.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.springframework.util.Assert;
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * <p>
@@ -33,6 +36,17 @@ public class GsonUtil {
      */
     public static <T> T fromJson(String str,Class<T> type){
         Gson gson = new Gson();
+        return gson.fromJson(str, type);
+    }
+
+    /**
+     * json字符串转换成list数组
+     * @param str   字符串
+     * @return  list数组
+     */
+    public static List<Object> toListFromJson(String str){
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<Object>>(){}.getType();
         return gson.fromJson(str, type);
     }
 }

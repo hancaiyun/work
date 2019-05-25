@@ -1,4 +1,4 @@
-package com.nicehancy.work.web;
+package com.nicehancy.work.web.countDownLatch;
 
 import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
  * @since 2019/4/15 14:47
  **/
 @Slf4j
-public class CountDownLatchTest extends BaseSpringTest {
+public class CountDownLatchSimpleTest extends BaseSpringTest {
 
     @Test
     public void doWork(){
