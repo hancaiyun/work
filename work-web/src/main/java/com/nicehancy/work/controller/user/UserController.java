@@ -48,6 +48,6 @@ public class UserController extends BaseController {
         UserInfoDTO userInfoDTO = userInfoService.queryUserInfo(userNo, traceLogId);
         log.info("UserController queryUserInfo RESULT: {}",userInfoDTO);
 
-        return null;
+        return new ModelMap();
     }
 }

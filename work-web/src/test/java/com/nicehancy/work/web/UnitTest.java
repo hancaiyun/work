@@ -50,6 +50,15 @@ public class UnitTest extends BaseSpringTest {
         log.info("验证结果：{}", RegularValidatorUtil.isEmail(str));
     }
 
+    /**
+     * 数字字母组成测试
+     */
+    @Test
+    public void isNumAndLetterTest(){
+        String str = "231~";
+        log.info("验证结果：{}", RegularValidatorUtil.isNumAndLetter(str));
+    }
+
     @Test
     public void fileTest(){
 
