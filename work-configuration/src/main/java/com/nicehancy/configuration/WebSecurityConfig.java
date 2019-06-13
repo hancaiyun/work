@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import static org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN;
+
 
 /**
  * <p>
@@ -44,6 +46,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         //解决iframe框架不允许内嵌问题
         http.headers().frameOptions().disable();
+
+        //http.headers().frameOptions().sameOrigin();
 
         http.authorizeRequests()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
