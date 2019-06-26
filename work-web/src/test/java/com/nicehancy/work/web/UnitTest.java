@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.xml.soap.Node;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -81,6 +82,26 @@ public class UnitTest extends BaseSpringTest {
     @Test
     public void test1(){
         //Class.forName().get
+        String str = "";
+        str.hashCode();
+    }
+
+    @Test
+    public void test2(){
+
+        Integer a = 13;
+        Integer b = 13;
+
+        if(a == b){
+            log.info("两者相等");
+        }else{
+            log.info("两者不相等");
+        }
+    }
+
+    @Test
+    public void test3(){
+
 
     }
 }
