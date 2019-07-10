@@ -102,6 +102,10 @@ public class UnitTest extends BaseSpringTest {
     @Test
     public void test3(){
 
-
-    }
+            int i=130000;
+            int j=130000;
+            if(i==j){
+                log.info("{}","两者相等");
+            }
+        }
 }
