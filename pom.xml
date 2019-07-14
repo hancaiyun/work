@@ -43,6 +43,7 @@
 		<fastjson.version>1.2.57</fastjson.version>
 		<itextpdf.version>5.5.10</itextpdf.version>
 		<itext-asian.version>5.2.0</itext-asian.version>
+		<redis.version>2.9.0</redis.version>
 	</properties>
 
 	<dependencies>
@@ -65,9 +66,15 @@
 		</dependency>
 		
 		<!--REDIS-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--		</dependency>-->
+		<!-- Redis -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${redis.version}</version>
 		</dependency>
 
 		<dependency>

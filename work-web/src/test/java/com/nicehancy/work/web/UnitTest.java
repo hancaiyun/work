@@ -107,5 +107,42 @@ public class UnitTest extends BaseSpringTest {
             if(i==j){
                 log.info("{}","两者相等");
             }
-        }
+    }
+
+
+    @Test
+    public void threadTest(){
+
+        Thread t1 = new Thread(() -> {
+            try {
+                Thread.sleep(500);
+                System.out.print("A");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            try {
+                Thread.sleep(700);
+                System.out.print("B");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread t3 = new Thread(() -> {
+            try {
+                Thread.sleep(900);
+                System.out.print("C");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+
 }
