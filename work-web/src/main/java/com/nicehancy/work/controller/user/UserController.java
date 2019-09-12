@@ -50,4 +50,20 @@ public class UserController extends BaseController {
 
         return new ModelMap();
     }
+
+    @RequestMapping("/pageQuery")
+    public ModelMap pageQuery(HttpServletRequest request) throws IOException {
+
+        String traceLogId = UUID.randomUUID().toString();
+        MDC.put("TRACE_LOG_ID", traceLogId);
+        String page = this.getParameters(request).get("page");
+        String limit = this.getParameters(request).get("limit");
+
+        log.info("UserController queryUserInfo request PARAM: page={}, limit={},traceLogId={}", page, limit,traceLogId);
+
+
+        //log.info("UserController queryUserInfo RESULT: {}",userInfoDTO);
+
+        return new ModelMap();
+    }
 }
