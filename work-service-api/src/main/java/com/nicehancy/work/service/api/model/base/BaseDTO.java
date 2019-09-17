@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Date;
+
 /**
  * <p>
  *     DTO父类
@@ -20,7 +22,7 @@ public class BaseDTO {
     /**
      * 创建时间
      */
-    private String createdAt;
+    private Date createdAt;
 
     /**
      * 创建人
@@ -30,7 +32,7 @@ public class BaseDTO {
     /**
      * 更新时间
      */
-    private String updatedAt;
+    private Date updatedAt;
 
     /**
      * 更新人

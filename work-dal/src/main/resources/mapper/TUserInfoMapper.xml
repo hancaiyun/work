@@ -32,6 +32,36 @@
          UPDATED_BY
     </sql>
 
+    <!-- 新增用户信息 -->
+    <insert id="insert" parameterType="com.nicehancy.work.dal.model.UserInfoDO">
+        INSERT INTO T_USER_INFO(
+               USER_NO,
+               USER_NAME,
+               NICK_NAME,
+               PASSWORD,
+               E_MAIL,
+               AUTH_CODE,
+               REMARK,
+               CREATED_AT,
+               CREATED_BY,
+               UPDATED_AT,
+               UPDATED_BY
+             )
+            VALUES(
+                #{userNo, jdbcType = VARCHAR},
+                #{userName, jdbcType = VARCHAR},
+                #{nickName, jdbcType = VARCHAR},
+                #{password, jdbcType = VARCHAR},
+                #{eMail, jdbcType = VARCHAR},
+                #{authCode, jdbcType = VARCHAR},
+                #{remark, jdbcType = VARCHAR},
+                now(),
+                #{createdBy, jdbcType = VARCHAR},
+                now(),
+                #{updatedBy, jdbcType = VARCHAR}
+            )
+    </insert>
+
     <!-- 用户信息查询 -->
     <select id="queryUserInfo" parameterType="java.lang.String" resultMap="userInfoMap">
         SELECT

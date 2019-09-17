@@ -3,6 +3,8 @@ package com.nicehancy.work.dal.model.base;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 /**
  * <p>
  *     数据库DO基类
@@ -23,7 +25,7 @@ public class BaseDO {
     /**
      * 创建时间
      */
-    private String createdAt;
+    private Date createdAt;
 
     /**
      * 创建人
@@ -33,7 +35,7 @@ public class BaseDO {
     /**
      * 更新时间
      */
-    private String updatedAt;
+    private Date updatedAt;
 
     /**
      * 更新人

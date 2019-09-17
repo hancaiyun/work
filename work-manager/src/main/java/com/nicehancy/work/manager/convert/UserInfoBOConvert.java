@@ -48,4 +48,25 @@ public class UserInfoBOConvert {
         return userInfoBO;
     }
 
+    public static UserInfoDO getDOByBO(UserInfoBO userInfoBO) {
+
+        if (userInfoBO == null) {
+            return null;
+        }
+
+        UserInfoDO userInfoDO = new UserInfoDO();
+        userInfoDO.setUserNo(userInfoBO.getUserNo());
+        userInfoDO.setUserName(userInfoBO.getUserName());
+        userInfoDO.setNickName(userInfoBO.getNickName());
+        userInfoDO.setPassword(userInfoBO.getPassword());
+        userInfoDO.setEMail(userInfoBO.getEMail());
+        userInfoDO.setAuthCode(userInfoBO.getAuthCode());
+        userInfoDO.setRemark(userInfoBO.getRemark());
+        userInfoDO.setCreatedAt(userInfoBO.getCreatedAt());
+        userInfoDO.setCreatedBy(userInfoBO.getCreatedBy());
+        userInfoDO.setUpdatedAt(userInfoBO.getUpdatedAt());
+        userInfoDO.setUpdatedBy(userInfoBO.getUpdatedBy());
+
+        return userInfoDO;
+    }
 }

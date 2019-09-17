@@ -2,7 +2,7 @@ package com.nicehancy.work.service.user;
 
 import com.nicehancy.work.biz.user.UserInfoBiz;
 import com.nicehancy.work.manager.model.UserInfoBO;
-import com.nicehancy.work.service.api.model.UserInfoDTO;
+import com.nicehancy.work.service.api.model.user.UserInfoDTO;
 import com.nicehancy.work.service.convert.UserInfoDTOConvert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +43,21 @@ public class UserInfoServiceImpl {
             log.error("call UserInfoServiceImpl queryUserInfo failed, message：e={}", e);
         }
         return userInfoDTO;
+    }
+
+    /**
+     * 新增用户信息
+     * @param userInfoDTO               用户信息
+     * @param traceLogId                日志ID
+     */
+    public void addUser(UserInfoDTO userInfoDTO, String traceLogId){
+
+        try{
+            log.info("call UserInfoServiceImpl addUser param: userInfoDTO={}, traceLogId={}", userInfoDTO, traceLogId);
+            userInfoBiz.addUser(UserInfoDTOConvert.getBOByDTO(userInfoDTO));
+            log.info("call UserInfoServiceImpl addUser result: {}", "true");
+        }catch (Exception e){
+            log.error("call UserInfoServiceImpl addUser failed, message：e={}", e);
+        }
     }
 }

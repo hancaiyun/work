@@ -5,7 +5,7 @@ import com.nicehancy.work.manager.UserInfoManager;
 import com.nicehancy.work.manager.model.UserInfoBO;
 import com.nicehancy.work.manager.redis.RedisManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  * @author hancaiyun
  * @since 2019/4/2 17:36
  **/
-@Service
+@Component
 public class UserInfoBiz {
 
     @Autowired
@@ -48,5 +48,14 @@ public class UserInfoBiz {
             }
             return userInfoBO;
         }
+    }
+
+    /**
+     * 新增用户信息
+     * @param userInfoBO               用户信息
+     */
+    public void addUser(UserInfoBO userInfoBO) {
+
+        userInfoManager.addUser(userInfoBO);
     }
 }

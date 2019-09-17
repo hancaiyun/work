@@ -18,4 +18,10 @@ public interface UserInfoManager {
      * @return              用户信息
      */
     UserInfoBO queryUserInfo(String userNo);
+
+    /**
+     * 新增用户信息
+     * @param userInfoBO    用户信息
+     */
+    void addUser(UserInfoBO userInfoBO);
 }

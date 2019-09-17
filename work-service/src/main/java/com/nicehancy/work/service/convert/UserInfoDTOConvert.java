@@ -1,7 +1,7 @@
 package com.nicehancy.work.service.convert;
 
 import com.nicehancy.work.manager.model.UserInfoBO;
-import com.nicehancy.work.service.api.model.UserInfoDTO;
+import com.nicehancy.work.service.api.model.user.UserInfoDTO;
 
 /**
  * <p>
@@ -44,5 +44,32 @@ public class UserInfoDTOConvert {
         userInfoDTO.setUpdatedAt(userInfoBO.getUpdatedAt());
 
         return userInfoDTO;
+    }
+
+    /**
+     * DTO转BO
+     * @param userInfoDTO                   用户信息DTO
+     * @return                              用户信息BO
+     */
+    public static UserInfoBO getBOByDTO(UserInfoDTO userInfoDTO) {
+
+        if (userInfoDTO == null) {
+            return null;
+        }
+
+        UserInfoBO userInfoBO = new UserInfoBO();
+        userInfoBO.setUserNo(userInfoDTO.getUserNo());
+        userInfoBO.setUserName(userInfoDTO.getUserName());
+        userInfoBO.setNickName(userInfoDTO.getNickName());
+        userInfoBO.setPassword(userInfoDTO.getPassword());
+        userInfoBO.setEMail(userInfoDTO.getEMail());
+        userInfoBO.setAuthCode(userInfoDTO.getAuthCode());
+        userInfoBO.setRemark(userInfoDTO.getRemark());
+        userInfoBO.setCreatedAt(userInfoDTO.getCreatedAt());
+        userInfoBO.setCreatedBy(userInfoDTO.getCreatedBy());
+        userInfoBO.setUpdatedAt(userInfoDTO.getUpdatedAt());
+        userInfoBO.setUpdatedBy(userInfoDTO.getUpdatedBy());
+
+        return userInfoBO;
     }
 }

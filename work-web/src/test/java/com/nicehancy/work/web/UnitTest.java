@@ -223,4 +223,20 @@ public class UnitTest extends BaseSpringTest {
         subList.remove(0);
         log.info("list:{},subList:{}", list, subList);
     }
+
+    /**
+     * 手动终止虚拟机的运行，finally块将不再被执行
+     */
+    @Test
+    public void exceptionTest(){
+        try{
+            log.info("执行try/catch中的代码块");
+            System.exit(0);
+            throw new Exception("自定义异常");
+        }catch (Exception e){
+            log.info("捕获异常日志打印");
+        }finally {
+            log.info("finally中执行的操作");
+        }
+    }
 }

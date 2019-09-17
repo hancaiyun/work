@@ -1,4 +1,4 @@
-package com.nicehancy.work.service.api.model;
+package com.nicehancy.work.service.api.model.user;
 
 import com.nicehancy.work.service.api.model.base.BaseDTO;
 import lombok.Getter;

@@ -2,6 +2,7 @@ package com.nicehancy.work.manager.model.base;
 
 import lombok.Getter;
 import lombok.Setter;
+import java.util.Date;
 
 /**
  * <p>
@@ -17,7 +18,7 @@ public class BaseBO {
     /**
      * 创建时间
      */
-    private String createdAt;
+    private Date createdAt;
 
     /**
      * 创建人
@@ -27,7 +28,7 @@ public class BaseBO {
     /**
      * 更新时间
      */
-    private String updatedAt;
+    private Date updatedAt;
 
     /**
      * 更新人

@@ -3,6 +3,7 @@ package com.nicehancy.work.dal.model;
 import com.nicehancy.work.dal.model.base.BaseDO;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * <p>
@@ -14,6 +15,7 @@ import lombok.Setter;
  **/
 @Getter
 @Setter
+@Document(collection = "c_user_info")
 public class UserInfoDO extends BaseDO {
 
     /**

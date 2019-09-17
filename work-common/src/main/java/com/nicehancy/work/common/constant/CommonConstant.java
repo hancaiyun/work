@@ -33,4 +33,9 @@ public final class CommonConstant {
      * 文件头
      */
     public static final String[] FILE_HEADER_DEMO = { "序号", "用户编号", "用户名", "权限", "操作", "原因" };
+
+    /**
+     * 数据库切换开关
+     */
+    public static final String DATA_SOURCE_SWITCH = "DATA_SOURCE_SWITCH";
 }

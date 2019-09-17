@@ -44,6 +44,8 @@
 		<itextpdf.version>5.5.10</itextpdf.version>
 		<itext-asian.version>5.2.0</itext-asian.version>
 		<redis.version>2.9.0</redis.version>
+		<spring-data-mongodb.version>1.4.1.RELEASE</spring-data-mongodb.version>
+		<mongo-java-driver.version>2.13.0-rc2</mongo-java-driver.version>
 	</properties>
 
 	<dependencies>
@@ -114,6 +116,19 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- mongodb spring -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring-data-mongodb.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongo-java-driver.version}</version>
+		</dependency>
+
 		<!-- commons -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
