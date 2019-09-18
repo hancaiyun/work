@@ -1,6 +1,5 @@
 package com.nicehancy.work.manager.impl;
 
-import com.nicehancy.work.dal.mapper.UserInfoMapper;
 import com.nicehancy.work.manager.UserInfoManager;
 import com.nicehancy.work.manager.convert.UserInfoBOConvert;
 import com.nicehancy.work.manager.dao.UserInfoDao;

@@ -1,5 +1,6 @@
 package com.nicehancy.work.dal.repository.impl;
 
+import com.nicehancy.work.common.utils.UUIDUtil;
 import com.nicehancy.work.dal.model.UserInfoDO;
 import com.nicehancy.work.dal.repository.UserInfoRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -8,7 +9,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
-
 import java.util.Date;
 
 /**
@@ -50,8 +50,10 @@ public class UserInfoRepositoryImpl implements UserInfoRepository {
     public void insert(UserInfoDO userInfoDO) {
 
         //字段初始化
+        userInfoDO.setId(Long.valueOf(UUIDUtil.createNoByUUId()));
         userInfoDO.setCreatedAt(new Date());
         userInfoDO.setUpdatedAt(new Date());
+        userInfoDO.setUpdatedBy(userInfoDO.getCreatedBy());
 
         mongoTemplate.insert(userInfoDO);
     }

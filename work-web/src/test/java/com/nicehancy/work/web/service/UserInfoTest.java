@@ -42,6 +42,8 @@ public class UserInfoTest extends BaseSpringTest {
         UserInfoDTO userInfoDTO = new UserInfoDTO();
         userInfoDTO.setUserNo("19921577717");
         userInfoDTO.setUserName("韩旭");
+        userInfoDTO.setCreatedBy("19921577717");
+        userInfoDTO.setPassword("hancaiyun945");
         //userInfoDTO.setAuthCode();
 
         userInfoService.addUser(userInfoDTO, UUIDUtil.createNoByUUId());

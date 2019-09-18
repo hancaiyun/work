@@ -1,7 +1,6 @@
 package com.nicehancy.work.dal.repository;
 
 import com.nicehancy.work.dal.model.UserInfoDO;
-import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>

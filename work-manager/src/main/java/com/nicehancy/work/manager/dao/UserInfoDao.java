@@ -40,7 +40,7 @@ public class UserInfoDao {
     public UserInfoDO queryUserInfo(String userNo){
 
         if(isMySQL()){
-            return userInfoMapper.queryUserInfo(userNo);
+            return (userInfoMapper.queryUserInfo(userNo));
         }else{
             return userInfoRepository.queryUserInfo(userNo);
         }
@@ -68,6 +68,7 @@ public class UserInfoDao {
 
         //查询数据源开关
         String dataSwitch = redisManager.queryObjectByKey(CommonConstant.DATA_SOURCE_SWITCH);
+        //开关不存在
         if(StringUtils.isEmpty(dataSwitch)){
             throw new BusinessException(BusinessErrorCode.SYSTEM_INNER_ERROR);
         }

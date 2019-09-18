@@ -58,7 +58,7 @@
                 now(),
                 #{createdBy, jdbcType = VARCHAR},
                 now(),
-                #{updatedBy, jdbcType = VARCHAR}
+                #{createdBy, jdbcType = VARCHAR}
             )
     </insert>
 

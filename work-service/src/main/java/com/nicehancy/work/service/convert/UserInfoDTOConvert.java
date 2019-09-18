@@ -1,16 +1,19 @@
 package com.nicehancy.work.service.convert;
 
+import com.nicehancy.work.common.utils.TripleDESUtil;
 import com.nicehancy.work.manager.model.UserInfoBO;
 import com.nicehancy.work.service.api.model.user.UserInfoDTO;
+import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 用户信息转换类
  * <p>
  * <p/>
  *
  * @author hancaiyun
  * @since 2019/4/3 0:42
  **/
-
+@Slf4j
 public class UserInfoDTOConvert {
 
     /**
@@ -61,7 +64,13 @@ public class UserInfoDTOConvert {
         userInfoBO.setUserNo(userInfoDTO.getUserNo());
         userInfoBO.setUserName(userInfoDTO.getUserName());
         userInfoBO.setNickName(userInfoDTO.getNickName());
-        userInfoBO.setPassword(userInfoDTO.getPassword());
+        //加密
+        try {
+            userInfoBO.setPassword(TripleDESUtil.encrypt(userInfoDTO.getPassword()));
+        } catch (Exception e) {
+            log.error("密码加密失败，失败原因:{}", e);
+            userInfoBO.setPassword(userInfoDTO.getPassword());
+        }
         userInfoBO.setEMail(userInfoDTO.getEMail());
         userInfoBO.setAuthCode(userInfoDTO.getAuthCode());
         userInfoBO.setRemark(userInfoDTO.getRemark());
