@@ -3,6 +3,7 @@ package com.nicehancy.work.manager.model;
 import com.nicehancy.work.manager.model.base.BaseBO;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * <p>
@@ -14,6 +15,7 @@ import lombok.Setter;
  **/
 @Getter
 @Setter
+@ToString
 public class UserInfoBO extends BaseBO {
 
     /**

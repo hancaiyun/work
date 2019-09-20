@@ -2,6 +2,7 @@ package com.nicehancy.work.service.security;
 
 import com.nicehancy.work.biz.user.UserInfoBiz;
 import com.nicehancy.work.manager.model.UserInfoBO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +20,7 @@ import java.util.List;
  * @author hancaiyun
  * @since 2019/4/16 9:44
  **/
+@Slf4j
 @Service
 public class CustomUserServiceImpl implements UserDetailsService {
 
@@ -37,7 +39,9 @@ public class CustomUserServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
+        log.info("call user login, parameter:{}", username);
         UserInfoBO user = userInfoBiz.queryUserInfo(username);
+        log.info("query user infomation:{}", user);
         if(user == null){
             throw new UsernameNotFoundException("user is not exist");
         }

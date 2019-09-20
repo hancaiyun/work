@@ -44,6 +44,10 @@ public class UserInfoTest extends BaseSpringTest {
         userInfoDTO.setUserName("韩旭");
         userInfoDTO.setCreatedBy("19921577717");
         userInfoDTO.setPassword("hancaiyun945");
+        userInfoDTO.setNickName("CY");
+        userInfoDTO.setEMail("542366430@qq.com");
+        userInfoDTO.setAuthCode("SUPER_ADMINISTRATOR");
+        userInfoDTO.setRemark("TEST");
         //userInfoDTO.setAuthCode();
 
         userInfoService.addUser(userInfoDTO, UUIDUtil.createNoByUUId());

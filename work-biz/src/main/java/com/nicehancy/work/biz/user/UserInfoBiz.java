@@ -40,11 +40,12 @@ public class UserInfoBiz {
             return userInfoBO;
         }else{
             userInfoBO = userInfoManager.queryUserInfo(userNo);
-            //加入缓存,设置超时时间（5分钟）
+            //缓存空结果,设置超时时间（5分钟）
             if(null == userInfoBO){
                 redisManager.insertObject(userInfoBO, userNo, 300);
             }else{
-                redisManager.insertObject(userInfoBO, userNo);
+                //缓存用户信息，设置超时时间（2小时）
+                //redisManager.insertObject(userInfoBO, userNo, 7200);
             }
             return userInfoBO;
         }

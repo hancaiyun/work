@@ -1,10 +1,14 @@
 package com.nicehancy.work.web.service.config;
 
+import com.nicehancy.work.common.enums.DataSuorceEnum;
+import com.nicehancy.work.common.utils.UUIDUtil;
 import com.nicehancy.work.service.api.config.DataSouceSwitchService;
 import com.nicehancy.work.web.base.BaseSpringTest;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.UUID;
 
 /**
  * <p>
@@ -23,15 +27,15 @@ public class DataSourceSwitchServiceTest extends BaseSpringTest {
     @Test
     public void queryDataSourceTest(){
 
-        String traceLogId = "123132132313123213";
+        String traceLogId = UUID.randomUUID().toString();
         dataSouceSwitchService.queryDataSourceSwitch(traceLogId);
     }
 
     @Test
     public void switchDataSourceTest(){
 
-        String dataSource = "MONGODB";
-        String traceLogId = "123132132132321323";
+        String dataSource = DataSuorceEnum.MONGODB.getCode();
+        String traceLogId = UUID.randomUUID().toString();
         dataSouceSwitchService.switchDataSource(dataSource, traceLogId);
     }
 }
