@@ -28,7 +28,7 @@ public class HomeController {
     @RequestMapping(value = "/index")
     @ResponseBody
     public ModelAndView index(HttpServletResponse response) {
-        response.addHeader("x-frame-options","SAMEORIGIN");
+        response.setHeader("X-Frame-Options", "SAMEORIGIN");
         ModelAndView mode = new ModelAndView();
         mode.setViewName("index");
         return mode;
@@ -42,7 +42,7 @@ public class HomeController {
     @RequestMapping(value = "/welcome")
     @ResponseBody
     public ModelAndView welcome(HttpServletResponse response){
-        response.addHeader("x-frame-options","SAMEORIGIN");
+        response.setHeader("X-Frame-Options", "SAMEORIGIN");
         ModelAndView mode = new ModelAndView();
         mode.setViewName("welcome");
         return mode;

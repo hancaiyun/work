@@ -58,8 +58,8 @@ public class UserController extends BaseController {
      * @return
      * @throws IOException
      */
-    @RequestMapping("/pageQuery")
-    public ModelMap pageQuery(HttpServletRequest request) throws IOException {
+    @RequestMapping("/list")
+    public String pageQuery(HttpServletRequest request) throws IOException {
 
         String traceLogId = UUID.randomUUID().toString();
         MDC.put("TRACE_LOG_ID", traceLogId);
@@ -71,6 +71,6 @@ public class UserController extends BaseController {
 
         //log.info("UserController queryUserInfo RESULT: {}",userInfoDTO);
 
-        return new ModelMap();
+        return "user-list";
     }
 }
