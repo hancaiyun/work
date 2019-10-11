@@ -30,7 +30,7 @@ public class UserInfoTest extends BaseSpringTest {
     @Test
     public void queryUserInfoTest(){
 
-        userInfoService.queryUserInfo("19921577717", UUID.randomUUID().toString());
+        userInfoService.queryUserInfo("user", UUID.randomUUID().toString());
     }
 
     /**

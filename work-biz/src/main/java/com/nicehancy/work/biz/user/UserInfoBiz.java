@@ -42,9 +42,9 @@ public class UserInfoBiz {
             userInfoBO = userInfoManager.queryUserInfo(userNo);
             //缓存空结果,设置超时时间（5分钟）
             if(null == userInfoBO){
-                redisManager.insertObject(userInfoBO, userNo, 300);
+                redisManager.insertObject(GsonUtil.toJson(userInfoBO), userNo, 300);
             }else{
-                //缓存用户信息，设置超时时间（2小时）
+                //缓存用户信息，设置超时时间（2小时） TODO 暂不新增到缓存，日期格式缓存后解析时会报错-日期格式错误
                 //redisManager.insertObject(userInfoBO, userNo, 7200);
             }
             return userInfoBO;

@@ -34,7 +34,7 @@ public class DataSourceSwitchServiceTest extends BaseSpringTest {
     @Test
     public void switchDataSourceTest(){
 
-        String dataSource = DataSuorceEnum.MONGODB.getCode();
+        String dataSource = DataSuorceEnum.MYSQL.getCode();
         String traceLogId = UUID.randomUUID().toString();
         dataSouceSwitchService.switchDataSource(dataSource, traceLogId);
     }

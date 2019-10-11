@@ -42,7 +42,7 @@ public class HomeController {
     @RequestMapping(value = "/welcome")
     @ResponseBody
     public ModelAndView welcome(HttpServletResponse response){
-        response.setHeader("X-Frame-Options", "SAMEORIGIN");
+        //response.setHeader("X-Frame-Options", "SAMEORIGIN");
         ModelAndView mode = new ModelAndView();
         mode.setViewName("welcome");
         return mode;
