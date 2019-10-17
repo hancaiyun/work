@@ -32,8 +32,11 @@ public final class ResultConstants {
     public static final String RESULT_DATA_NAME = "data";
 
     /*************************返回编码及页面****************************************/
-    /** 通用访问成功时的编码 */
+    /** 通用访问并且处理成功时的编码 */
     public static final String SUCCESS_CODE = "0000";
+
+    /** 通用处理失败时的编码 */
+    public static final String DONE_FAILED_CODE = "0001";
 
     /** 通用访问失败时的编码 */
     public static final String FAILURE_CODE = "1111";

@@ -1,4 +1,4 @@
-package com.nicehancy.work.web.controller.config;
+package com.nicehancy.work.web.controller.system.changer;
 
 import com.nicehancy.work.service.api.model.base.Result;
 import com.nicehancy.work.service.config.DataSourceSwitchServiceImpl;
@@ -25,7 +25,7 @@ import java.util.UUID;
  **/
 @Slf4j
 @Controller
-@RequestMapping("/config")
+@RequestMapping("/changer")
 public class SwitchController extends BaseController {
 
     @Autowired
@@ -35,7 +35,7 @@ public class SwitchController extends BaseController {
      * 开关页面
      * @return     页面视图
      */
-    @RequestMapping(value = "/switch")
+    @RequestMapping(value = "/page")
     @ResponseBody
     public ModelAndView getPage(){
 

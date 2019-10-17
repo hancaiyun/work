@@ -59,4 +59,16 @@ public abstract class AbstractController {
         return modelMap;
     }
 
+    /**
+     * 处理返回结果
+     *
+     * @param msg       错误信息
+     */
+    protected ModelMap processSuccessJSON(String msg) {
+        ModelMap modelMap = new ModelMap();
+        modelMap.put(ResultConstants.RESULT_CODE_NAME, ResultConstants.DONE_FAILED_CODE);
+        modelMap.put(ResultConstants.RESULT_MESSAGE_NAME, msg);
+        return modelMap;
+    }
+
 }

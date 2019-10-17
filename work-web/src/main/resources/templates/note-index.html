@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>note</title>
+    <link rel="stylesheet" type="text/css" href="../frame/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="../frame/static/css/style.css">
+    <link rel="icon" href="../frame/static/image/code.png">
+</head>
+<body class="body">
+
+<div class="layui-row layui-col-space10">
+
+    <!--目录区域-树-->
+    <div class="layui-col-xs12 layui-col-sm2 layui-col-md2">
+        <ul id="tree" class="tree-table-tree-box"></ul>
+    </div>
+
+    <!--文档区域-富文本域-->
+    <div class="layui-col-xs12 layui-col-sm10 layui-col-md10">
+        <div class="my-btn-box">
+            <label for="note-area"></label><textarea class="layui-form-item" id="note-area" style="display: none;"></textarea>
+            <div class="layui-form-item">
+                <button class="layui-btn" id="save" lay-submit="" lay-filter="save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../frame/layui/layui.js"></script>
+<!--文档文本域-保存-->
+<script>
+    layui.use('layedit', function () {
+        var layedit = layui.layedit;
+        //建立编辑器
+        var textarea = layedit.build('note-area', {height: 400});
+
+        //保存富文本域，用于之后的文本域的异步更新
+        layui.data('session', {
+            key: 'textarea'
+            , value: textarea
+        });
+
+        var $ = layui.jquery;
+        //1、监听按钮-数据源切换提交
+        $("#save").click(function () {
+
+            //获取内容，而不是文本，保留原有格式
+            var content = layedit.getContent(textarea);
+            //获取会话保存的目录节点id
+            var session = layui.data("session");
+            if(session.id > 100) {
+                $.ajax({
+                    url: '/note/save',//提交地址
+                    data: {"content": content, "id": session.id},//数据， id获取
+                    dataType: 'json',//数据类型-json
+                    type: 'GET',//类型
+                    timeout: 3000,//超时
+                    //请求成功
+                    success: function (res) {
+                        if (res.code === '0000') {
+                            layer.open({
+                                title: '提示信息'
+                                , content: '保存成功'
+                            });
+                        } else {
+                            layer.open({
+                                title: '提示信息'
+                                , content: '保存失败，失败原因:' + res.data.msg
+                            });
+                        }
+                    },
+                    //失败/超时
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        if (textStatus === 'timeout') {
+                            alert('請求超時');
+                            setTimeout(function () {
+                                alert('重新请求');
+                            }, 3000);
+                        }
+                        alert(errorThrown);
+                    }
+                })
+            }
+        });
+    });
+</script>
+
+<!-- 目录树操作 -->
+<script type="text/javascript">
+    // layui方法
+    layui.use(['tree', 'layer', 'layedit'], function () {
+
+        // 操作对象
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        var layedit = layui.layedit;
+
+        //文档目录树
+        layui.tree({
+            elem: '#tree' //传入元素选择器
+            , click: function (item) { //点击节点回调
+                //每次目录节点点击，保存节点id到会话表, 只保存文档节点
+                layui.data('session', {
+                    key: 'id'
+                    , value: item.id
+                });
+
+                //请求查询
+                $.ajax({
+                    url: '/note/query' + '?id=' + item.id,//地址
+                    dataType: 'json',//数据类型
+                    type: 'GET',//类型
+                    timeout: 3000,//超时
+                    //请求成功
+                    success: function (res) {
+                        if (res.code === "0000") {
+                            var session = layui.data("session");
+                            layedit.setContent(session.textarea, res.data.result);
+                        } else {
+                            layer.open({
+                                title: '提示信息'
+                                , content: '查询失败:' + res.data.msg
+                            });
+                        }
+                    },
+                    //失败/超时
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        if (textStatus === 'timeout') {
+                            alert('网络异常');
+                            setTimeout(function () {
+                                alert('重新请求');
+                            }, 3000);
+                        }
+                        alert(errorThrown);
+                    }
+                });
+
+                // 加载中...
+                // var loadIndex = layer.load(2, {shade: false});
+                // // 关闭加载
+                // layer.close(loadIndex);
+            }, nodes: [{ //节点
+                id: 1,
+                name: '工作'
+                , children: [{
+                    id: 11,
+                    name: '项目'
+                    , children: [{
+                        id: 111,
+                        name: 'POS'
+                    }, {
+                        id: 112,
+                        name: '交易核心'
+                    }, {
+                        id: 113,
+                        name: '清分'
+                    }, {
+                        id: 114,
+                        name: '商服核心'
+                    }, {
+                        id: 115,
+                        name: '商户门店'
+                    }, {
+                        id: 116,
+                        name: '水电煤'
+                    }]
+                }]
+            }, {
+                id: 2,
+                name: '备份'
+                , children: [{
+                    id: 21,
+                    name: '账号备份'
+                    , children: [{
+                        id: 211,
+                        name: '账号密码'
+                    }]
+                }, {
+                    id: 22,
+                    name: '文档备份'
+                    , children: [{
+                        id: 221,
+                        name: '接口文档备份'
+                    }]
+                }]
+            }, {
+                id: 3,
+                name: '学习'
+                , children: [{
+                    id: 31,
+                    name: '基础'
+                    , children: [{
+                        id: 311,
+                        name: 'HashMap'
+                    }, {
+                        id: 312,
+                        name: '链表'
+                    }, {
+                        id: 313,
+                        name: '树'
+                    }, {
+                        id: 314,
+                        name: '数据库'
+                    }]
+                }, {
+                    id: 32,
+                    name: '架构'
+                    , children: [{
+                        id: 321,
+                        name: '微服务架构组成'
+                    }]
+                }, {
+                    id: 33,
+                    name: '事务'
+                    , children: [{
+                        id: 331,
+                        name: '事务的特性与传播行为'
+                    }]
+                }, {
+                    id: 34,
+                    name: '系统'
+                    , children: [{
+                        id: 341,
+                        name: 'Linux'
+                    }]
+                }]
+            }]
+        });
+
+        // you code ...
+    });
+</script>
+</body>
+</html>

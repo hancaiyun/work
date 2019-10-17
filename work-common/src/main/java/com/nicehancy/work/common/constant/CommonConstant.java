@@ -38,4 +38,18 @@ public final class CommonConstant {
      * 数据库切换开关
      */
     public static final String DATA_SOURCE_SWITCH = "DATA_SOURCE_SWITCH";
+
+    /*********************笔记三级目录名KEY值常量*********/
+    /**
+     * 一级目录
+     */
+    public static final String KEY_OF_PRIMARY_DIRECTORY = "primaryDirectory";
+    /**
+     * 二级目录
+     */
+    public static final String KEY_OF_SECONDARY_DIRECTORY = "secondDirectory";
+    /**
+     * 三级目录
+     */
+    public static final String KEY_OF_TERTIARY_DIRECTORY = "tertiaryDirectory";
 }

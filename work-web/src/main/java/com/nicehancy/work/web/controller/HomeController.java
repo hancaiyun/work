@@ -47,4 +47,17 @@ public class HomeController {
         mode.setViewName("welcome");
         return mode;
     }
+
+    /**
+     * 帮助页
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/help")
+    @ResponseBody
+    public ModelAndView help(HttpServletResponse response){
+        ModelAndView mode = new ModelAndView();
+        mode.setViewName("help");
+        return mode;
+    }
 }
