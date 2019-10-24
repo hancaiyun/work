@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -31,6 +33,19 @@ public class UserController extends BaseController {
 
     @Autowired
     private UserInfoServiceImpl userInfoService;
+
+    /**
+     * 用户管理页面
+     * @return     页面视图
+     */
+    @RequestMapping(value = "/page")
+    @ResponseBody
+    public ModelAndView getPage(){
+
+        ModelAndView mode = new ModelAndView();
+        mode.setViewName("user-list");
+        return mode;
+    }
 
     /**
      * 用户信息查询
@@ -59,18 +74,21 @@ public class UserController extends BaseController {
      * @throws IOException
      */
     @RequestMapping("/list")
-    public String pageQuery(HttpServletRequest request) throws IOException {
+    @ResponseBody
+    public ModelMap pageQuery(HttpServletRequest request) throws IOException {
 
         String traceLogId = UUID.randomUUID().toString();
         MDC.put("TRACE_LOG_ID", traceLogId);
-        String page = this.getParameters(request).get("page");
-        String limit = this.getParameters(request).get("limit");
+        String currentPage = this.getParameters(request).get("currentPage");
+        String pageSize = this.getParameters(request).get("pageSize");
+        String userNo = this.getParameters(request).get("userNo");
 
-        log.info("UserController queryUserInfo request PARAM: page={}, limit={},traceLogId={}", page, limit,traceLogId);
+        log.info("UserController queryUserInfo request PARAM: currentPage={}, pageSize={},  userNo={}, traceLogId={}",
+                currentPage, pageSize, userNo, traceLogId);
 
 
         //log.info("UserController queryUserInfo RESULT: {}",userInfoDTO);
 
-        return "user-list";
+        return processSuccessJSON("");
     }
 }
