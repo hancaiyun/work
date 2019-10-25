@@ -15,14 +15,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>work-task</artifactId>
             <version>${project.version}</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>work-service</artifactId>
             <version>${project.version}</version>
-            <scope>compile</scope>
         </dependency>
 
         <!-- spring安全配置，自动实现登陆配置 -->

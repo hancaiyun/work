@@ -20,7 +20,7 @@ public class AnnotationsRunner {
         for (Method method : ms) {
             boolean flag = method.isAnnotationPresent(Annotations.class);
             if (flag) {
-                method.invoke(clazz.newInstance(), null);
+                method.invoke(clazz.newInstance(), (Object) null);
             }
         }
     }

@@ -15,7 +15,6 @@
             <groupId>com.nicehancy</groupId>
             <artifactId>work-common</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 

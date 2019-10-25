@@ -4,7 +4,7 @@ import com.nicehancy.work.biz.config.DataSourceSwitchBiz;
 import com.nicehancy.work.common.enums.DataSuorceEnum;
 import com.nicehancy.work.common.exception.BusinessErrorCode;
 import com.nicehancy.work.common.exception.BusinessException;
-import com.nicehancy.work.service.api.config.DataSouceSwitchService;
+import com.nicehancy.work.service.api.config.DataSourceSwitchService;
 import com.nicehancy.work.service.api.model.base.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
  **/
 @Slf4j
 @Service
-public class DataSourceSwitchServiceImpl implements DataSouceSwitchService {
+public class DataSourceSwitchServiceImpl implements DataSourceSwitchService {
 
     @Autowired
     private DataSourceSwitchBiz dataSourceSwitchBiz;

@@ -11,7 +11,7 @@ import com.nicehancy.work.service.api.model.base.Result;
  * @author hancaiyun
  * @since 2019/9/17 10:29
  **/
-public interface DataSouceSwitchService {
+public interface DataSourceSwitchService {
 
     /**
      * 1、查询数据源当前所处状态
