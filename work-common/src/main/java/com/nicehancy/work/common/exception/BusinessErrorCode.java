@@ -22,6 +22,11 @@ public enum BusinessErrorCode implements ErrorCode {
      */
     DATA_SOURCE_IS_ERROR("DATA_SOURCE_IS_ERROR","数据源类型有误"),
 
+    /**
+     * 待脱敏数据类型有误
+     */
+    DATA_TYPE_IS_ERROR("DATA_TYPE_IS_ERROR", "待脱敏数据类型有误"),
+
 
     ;
 
