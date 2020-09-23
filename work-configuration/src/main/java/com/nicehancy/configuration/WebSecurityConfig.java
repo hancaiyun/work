@@ -45,8 +45,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
         //解决iframe框架不允许内嵌问题
         //http.headers().frameOptions().disable();
 
-        //http.headers().frameOptions().sameOrigin();
-
         http.authorizeRequests()
                 .anyRequest().authenticated() //任何请求,登录后可以访问
                 .and()
