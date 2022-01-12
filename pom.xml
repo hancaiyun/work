@@ -33,7 +33,7 @@
 		<slf4j.version>1.7.25</slf4j.version>
 		<!--<testng.version>6.8.21</testng.version>-->
 		<dubbo-spring-boot-starter.version>2.7.0</dubbo-spring-boot-starter.version>
-		<dubbo.version>2.7.0</dubbo.version>
+		<dubbo.version>2.7.15</dubbo.version>
 		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
 	</properties>
 
