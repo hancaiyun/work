@@ -34,7 +34,7 @@
 		<!--<testng.version>6.8.21</testng.version>-->
 		<dubbo-spring-boot-starter.version>2.7.0</dubbo-spring-boot-starter.version>
 		<dubbo.version>2.7.0</dubbo.version>
-		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.28</mysql-connector-java.version>
 	</properties>
 
 	<dependencies>
